@@ -11,7 +11,7 @@ public class player {
 	static void changeX(int amount){
 		leftx += amount;
 		rightx += amount;
-		System.out.println(leftx);
+		
 	}
 	static void changeY(int amount){
 		topy += amount;

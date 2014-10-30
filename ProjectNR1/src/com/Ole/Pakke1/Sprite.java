@@ -1,20 +1,22 @@
 package com.Ole.Pakke1;
 
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 
-
-import java.io.*;
-
-import javax.imageio.ImageIO;
-
+import javax.swing.ImageIcon;
 
 public class Sprite {
+	public int dx;
+	public int dy;
+	public int x;
+	public int y;
+	public int width;
+	public int height;
+	public boolean visible;
+	private Image image;
 	
-	public Sprite() throws IOException{
-		BufferedImage image = ImageIO.read(new File("Sprite.png"));
+	public Sprite() {
+		
 	}
-	
 	
 
 }

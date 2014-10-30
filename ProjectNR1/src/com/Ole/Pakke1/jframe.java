@@ -2,8 +2,6 @@ package com.Ole.Pakke1;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.io.IOException;
-import java.net.URISyntaxException;
 
 import javax.swing.JFrame;
 

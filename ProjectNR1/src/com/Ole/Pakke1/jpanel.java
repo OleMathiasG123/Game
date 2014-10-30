@@ -3,12 +3,7 @@ package com.Ole.Pakke1;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
 
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -23,28 +18,28 @@ boolean visible;
 int x;
 int y;
 public Image image;
-BufferedImage sprite;
 
-
-	public jpanel()  {
+	public jpanel(){
 		l = new Logics();
 		setBorder(BorderFactory.createLineBorder(Color.GRAY));
 		setBackground(Color.BLACK);
-		try {
-		 sprite =  ImageIO.read(new File(getClass().getResource("Sprite.png").toURI()));
-		}
-		catch(Exception e) {
-			System.out.println("ekfmekfnmkef");
-		}
+		
+		
 	
 	}
-	
+	public void LoadSprite() {
+		ImageIcon ii = new ImageIcon(this.getClass().getResource("Sprite.png"));
+		width = image.getWidth(null);
+		height = image.getHeight(null);
+		visible = true;
+		x = 100;
+		y = 300;
+	}
 	
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		//l.fallcheck();
 		
 		l.checkY();
 		l.checkX();
@@ -56,10 +51,9 @@ BufferedImage sprite;
 		
 		g.setColor(Color.BLUE);
 		
-		g.fillRect(Platform.px, Platform.py, Platform.pxRight-Platform.px,Platform.pyBottom-Platform.py);
-		//g.setColor(Color.BLACK);
-		//g.fillRect(player.leftx, player.topy, player.rightx-player.leftx, player.bottomy-player.topy);
-		g.drawImage(sprite,player.leftx, player.topy, player.rightx-player.leftx, player.bottomy-player.topy, null, null);
+		g.fillRect(Platform.px, Platform.py, Platform.px2-Platform.px,Platform.py2-Platform.py);
+		g.fillRect(player.leftx, player.topy, player.rightx-player.leftx, player.bottomy-player.topy);
+		
 		
 	}
 
